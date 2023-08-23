@@ -131,7 +131,7 @@ const Page = () => {
                           <tr className="border-b text-slate-200 bg-gray-800 border-gray-700" key={item.id}>
                             <td className="px-6 py-4">
                               <div className='h-5 w-28'>
-                                <Link href={`/admin/view-user/${item.user_id}`}>{item.user_id}</Link>
+                                <Link href={`/admin/view-trader/${item.user_id}`}>{item.user_id}</Link>
                               </div>
                             </td>
 
