@@ -56,7 +56,7 @@ const AdminHeader: React.FC<Props> = ({ user }) => {
                         <button onClick={() => setCheckProfile(prevData => !prevData)} className=" outline-none gap-2 py-1 flex items-center">{user.name}
                             <FontAwesomeIcon icon={checkProfile ? faChevronUp : faChevronDown} width={16} height={16} />
                         </button>
-                        <ul className={`py-3 w-full flex flex-col gap-3 px-5 absolute bg-slate-800 ${!checkProfile && 'hidden'}`}>
+                        <ul className={`py-3 w-32 flex flex-col gap-3 px-5 absolute bg-slate-800 ${!checkProfile && 'hidden'}`}>
 
                             <li className='flex items-center hover:text-white gap-3 cursor-pointer' onClick={(e: any) => logout(e)}>
                                 Logout
