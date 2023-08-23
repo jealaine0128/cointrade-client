@@ -7,6 +7,7 @@ import UserTable from '@/components/admin/UserTable'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const Page = () => {
 
@@ -130,7 +131,7 @@ const Page = () => {
                           <tr className="border-b text-slate-200 bg-gray-800 border-gray-700" key={item.id}>
                             <td className="px-6 py-4">
                               <div className='h-5 w-28'>
-                                <span>{item.user_id}</span>
+                                <Link href={`/admin/view-user/${item.user_id}`}>{item.user_id}</Link>
                               </div>
                             </td>
 
