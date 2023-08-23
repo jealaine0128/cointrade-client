@@ -56,7 +56,7 @@ const UserHeader: React.FC<Props> = ({ user }) => {
                         {user.name ?<button onClick={() => setCheckProfile(prevData => !prevData)} className=" outline-none gap-2 py-1 flex items-center">{user.name}
                             <FontAwesomeIcon icon={checkProfile ? faChevronUp : faChevronDown} width={16} height={16} />
                         </button> : <div className='bg-slate-700 h-6 w-28 rounded-3xl animate-pulse'></div>}
-                        <ul className={`py-3 w-32 flex flex-col gap-3 px-5 absolute bg-slate-800 ${!checkProfile && 'hidden'}`}>
+                        <ul className={`py-3 w-full lg:w-32 flex flex-col gap-3 px-5 absolute bg-slate-800 ${!checkProfile && 'hidden'}`}>
 
                             <Link href={'/profile'} className='flex items-center hover:text-white gap-3 cursor-pointer'>
                                 Profile

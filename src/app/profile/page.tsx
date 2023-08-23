@@ -37,6 +37,8 @@ const Page = () => {
 
   const [isDeposit, setIsDeposit] = useState(false)
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const [formData, setFormData] = useState({
     coin: '',
     amount: ''
@@ -79,6 +81,7 @@ const Page = () => {
     if (!amount) return alert('Amount cannnot be empty.')
 
     try {
+      setIsLoading(true)
 
       const { data, status } = await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/v1/coins`, {
         coin, amount: Number(amount)
@@ -87,6 +90,7 @@ const Page = () => {
       if (data) {
         getUserCoins()
         alert('Success')
+        setIsLoading(false)
         setIsDeposit(false)
         setFormData({ amount: '', coin: '' })
       }
@@ -94,6 +98,9 @@ const Page = () => {
       console.log(status);
 
     } catch (error: any) {
+
+      setIsLoading(false)
+      alert('Something went wrong.')
 
       if (error.request.status === 401) {
           alert('Session expired please login.')
@@ -209,7 +216,7 @@ const Page = () => {
   return (
     <div className='overflow-x-hidden'>
 
-      {isDeposit && <DepositModal depositCoin={depositCoin} formData={formData} setFormData={setFormData} user={user} setIsDeposit={setIsDeposit} />}
+      {isDeposit && <DepositModal isLoading={isLoading} depositCoin={depositCoin} formData={formData} setFormData={setFormData} user={user} setIsDeposit={setIsDeposit} />}
       <UserHeader user={user} />
       <div className='px-5 sm:px-10 md:px-16 lg:px-24 w-screen h-screen xl:px-36 2xl:px-44 pt-16 flex flex-col text-slate-300'>
 

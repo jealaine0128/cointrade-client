@@ -22,6 +22,7 @@ const Page = () => {
 
   const itemsPerPage = 10
 
+
   const end = currentPage * itemsPerPage;
 
   const start = end - itemsPerPage;

@@ -1,14 +1,17 @@
 import { AllUser } from '@/app/admin/page'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 interface Props {
     skeleton: string[]
     user: AllUser[]
     searchQuery: string
+    isLoading: boolean
     approveUser: (user: AllUser) => Promise<void>
 }
 
-const PendingUserTable: React.FC<Props> = ({ skeleton, user, searchQuery, approveUser }) => {
+const PendingUserTable: React.FC<Props> = ({ isLoading, skeleton, user, searchQuery, approveUser }) => {
     return (
         <div className={`relative overflow-x-auto w-full `}>
             <table className="w-full text-left  text-gray-400">
@@ -45,8 +48,8 @@ const PendingUserTable: React.FC<Props> = ({ skeleton, user, searchQuery, approv
                                 </div>
                             </td>
                             <td className='py-3 relative px-6'>
-                                <button onClick={() => approveUser(item)} className='bg-green-500 px-6 cursor-pointer text-white py-1 hover:bg-green-400 flex items-center justify-center rounded-md'>
-                                    Approve
+                                <button disabled={isLoading && true} onClick={() => approveUser(item)} className={`${isLoading ? 'bg-green-400' : 'hover:bg-green-400 bg-green-500'} px-6 cursor-pointer text-white py-1 flex items-center justify-center rounded-md`}>
+                                    {isLoading ? <FontAwesomeIcon icon={faSpinner} className='animate-spin' width={16} height={16} /> : 'Approve'}
                                 </button>
                             </td>
                         </tr>

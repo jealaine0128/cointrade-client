@@ -27,11 +27,13 @@ interface Props {
         is_admin: boolean
     }
 
+    isLoading: boolean
+
     setIsDeposit: React.Dispatch<React.SetStateAction<boolean>>
 
 }
 
-const DepositModal: React.FC<Props> = ({ formData, setFormData, user, setIsDeposit, depositCoin }) => {
+const DepositModal: React.FC<Props> = ({isLoading, formData, setFormData, user, setIsDeposit, depositCoin }) => {
 
     const [allCoins, setAllCoins] = useState<CoinSearch[]>([])
 
@@ -158,7 +160,7 @@ const DepositModal: React.FC<Props> = ({ formData, setFormData, user, setIsDepos
 
                     }
                 }} className='bg-slate-900 border-b border-slate-500 px-3 py-1 w-full outline-none' />
-                <button className='w-1/2 bg-yellow-500 hover:bg-yellow-400 py-1.5 rounded-md'>Deposit</button>
+                <button className={`w-1/2 ${isLoading ? 'bg-yellow-400' : 'hover:bg-yellow-400 bg-yellow-500'} py-1.5 rounded-md`} disabled={isLoading && true}>{isLoading ? <FontAwesomeIcon icon={faSpinner} className='animate-spin' width={16} height={16} /> : 'Deposit'}</button>
             </form>
         </div>
     )

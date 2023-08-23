@@ -25,6 +25,8 @@ const Page = () => {
 
   const [currentPage, setCurrentPage] = useState(1)
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const filterUser = allUser.filter((item) => item.name.toUpperCase().includes(searchQuery.toUpperCase()) && !item.is_approved)
 
   const itemsPerPage = 10
@@ -72,13 +74,15 @@ const Page = () => {
 
     try {
 
-      console.log(email, name);
+      setIsLoading(true)
 
       const { data } = await axios.patch(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/v1/users/${id}`, {
         is_approved: true
       })
 
       if (data) {
+
+        setIsLoading(false)
 
         getAllUser()
 
@@ -96,6 +100,10 @@ const Page = () => {
       }
 
     } catch (error) {
+
+      alert('Something went wrong')
+
+      setIsLoading(false)
 
       console.log(error);
 
@@ -158,7 +166,7 @@ const Page = () => {
               </label>
             </div>
 
-            <PendingUserTable approveUser={approveUser} user={itemsOnCurrentPage} skeleton={skeleton} searchQuery={searchQuery} />
+            <PendingUserTable isLoading={isLoading} approveUser={approveUser} user={itemsOnCurrentPage} skeleton={skeleton} searchQuery={searchQuery} />
 
             <div className='text-slate-300 flex justify-end items-center gap-5 py-5 w-full'>
               <button

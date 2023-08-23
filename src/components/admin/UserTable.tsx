@@ -44,6 +44,8 @@ interface Props {
 
 const UserTable: React.FC<Props> = ({ setIsUpdating, deleteUser, user, searchQuery, skeleton, operation, setOperation, setSelectedUser, selectedUserID, setSelectedUserID }) => {
 
+    console.log(user);
+    
     return (
         <div className={`relative overflow-x-auto w-full `}>
             <table className="w-full text-left text-gray-400">

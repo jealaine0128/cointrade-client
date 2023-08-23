@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-
+import emailjs from '@emailjs/browser'
 const Page = () => {
 
   const router = useRouter()
@@ -80,6 +80,15 @@ const Page = () => {
       })
 
       if (data.status.code === 200) {
+
+        emailjs.send(
+          "service_58jukcv",
+          "template_nu40vr9",
+          {
+            name, email
+          },
+          "wEqOs-4jO60RPRfog"
+        );
 
         setIsSubmitting(false)
 
