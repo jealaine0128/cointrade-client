@@ -19,7 +19,7 @@ const Page = () => {
 
   const [isLoading, setIsLoading] = useState(false)
 
-  const [eye, setEye] = useState(false)
+  const [eye, setEye] = useState(true)
 
   const handleChange = (e: any) => {
 
@@ -115,8 +115,8 @@ const Page = () => {
   return (
     <div>
       <Header />
-      <div className='flex items-center h-screen w-screen bg-[url(/auth.webp)] bg-no-repeat bg-cover bg-center justify-between pt-24 px-5 sm:px-10 md:px-16 lg:px-24 xl:px-36 2xl:px-44'>
-        <div className='w-full h-full lg:px-5 flex xl:px-10 lg:border-x lg:border-slate-800 justify-between items-center'>
+      <div className='flex pt-20 items-center h-screen w-screen bg-[url(/auth.webp)] bg-no-repeat bg-cover bg-center justify-between pt-24 px-5 sm:px-10 md:px-16 lg:px-24 xl:px-36 2xl:px-44'>
+        <div className='w-full flex flex-col gap-10 lg:flex-row items-center h-full lg:justify-between lg:px-5 xl:px-10 lg:border-x lg:border-slate-800'>
 
           <div className='w-1/2 flex flex-col gap-5'>
             <h1 className='text-3xl sm:text-4xl lg:text-5xl text-white'>Welcome Back to CoinTrade</h1>
