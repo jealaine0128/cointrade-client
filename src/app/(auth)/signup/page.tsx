@@ -22,7 +22,7 @@ const Page = () => {
 
   const [isLoading, setIsLoading] = useState(false)
 
-  const [eye, setEye] = useState(false)
+  const [eye, setEye] = useState(true)
 
   const handleChange = (e: any) => {
 
