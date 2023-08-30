@@ -28,11 +28,11 @@ const AdminHeader: React.FC<Props> = ({ user }) => {
             localStorage.clear()
 
             router.push('/login')
-            
+
         } catch (error) {
-            
+
             console.error(error);
-            
+
         }
 
     }
@@ -52,7 +52,7 @@ const AdminHeader: React.FC<Props> = ({ user }) => {
                         <div>Transactions</div>
                     </Link>
 
-                    <li className='relative'>
+                    {user.name ? <li className='relative'>
                         <button onClick={() => setCheckProfile(prevData => !prevData)} className=" outline-none gap-2 py-1 flex items-center">{user.name}
                             <FontAwesomeIcon icon={checkProfile ? faChevronUp : faChevronDown} width={16} height={16} />
                         </button>
@@ -63,7 +63,7 @@ const AdminHeader: React.FC<Props> = ({ user }) => {
                                 <FontAwesomeIcon icon={faRightFromBracket} />
                             </li>
                         </ul>
-                    </li>
+                    </li> : <li className='h-5 w-32 bg-slate-700 animate-pulse rounded-3xl'></li>}
                 </ul>
             </div>
         </header>

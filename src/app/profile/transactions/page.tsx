@@ -1,14 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
-import { CoinSearch } from '@/components/dashboard/TradeCoins'
 import UserHeader from '@/components/dashboard/UserHeader'
-import ProfileInfo from '@/components/profile/ProfileInfo'
 import { faCircleUser, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import UserCoins from '@/components/profile/UserCoins'
 import UserTrades from '@/components/profile/UserTrades'
 import DepositModal from '@/components/profile/DepositModal'
 import { useRouter } from 'next/navigation'

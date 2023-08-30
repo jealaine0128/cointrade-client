@@ -56,14 +56,13 @@ const UserCoins: React.FC<Props> = ({ coins, skeleton, token, userCoins, searchQ
                 </thead>
                 <tbody>
                     {coins.length > 0 ? coins.map(item => (
-item.amount !== 0 && (
-                        <tr className=" border-b text-slate-200 bg-slate-800 border-gray-700 text-xs" key={item.coin}>
+                        <tr className="border-b text-slate-200 bg-slate-800 border-gray-700 text-xs" key={item.coin}>
                             <th scope="row" className="px-6 py-3 font-medium flex items-center gap-3 whitespace-nowrap text-white">
                                 <img src={item.image} alt={item.coin} width={30} height={30} />
                                 <div className='text-white flex items-center w-20'>{item.coin}</div>
                             </th>
                             <td className="px-6 py-3">
-                                <div className='h-4 w-20'>
+                                <div className='h-4 w-24'>
                                     {item.price}
                                 </div>
                             </td>
@@ -73,8 +72,8 @@ item.amount !== 0 && (
                                 </div>
                             </td>
                             <td className="px-6 py-3">
-                                <div className='h-4 w-32'>
-                                    $ {item.value.toFixed(6)}
+                                <div className='h-4 w-36'>
+                                    $ {item.value.toFixed(4)}
                                 </div>
                             </td>
                             <td className="px-6 py-3">
@@ -83,7 +82,6 @@ item.amount !== 0 && (
                                 </ul>
                             </td>
                         </tr>
-                        )
                     ))
                         : userCoins.length < 1 && token ?
                             <tr className="border-b text-slate-200 bg-gray-800 border-gray-700">

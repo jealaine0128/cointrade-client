@@ -98,15 +98,15 @@ const Page = () => {
   return (
     <div>
       <Header />
-      <div className='flex pt-20 items-center h-screen w-screen bg-[url(/auth.webp)] bg-no-repeat bg-cover bg-center justify-between pt-24 px-5 sm:px-10 md:px-16 lg:px-24 xl:px-36 2xl:px-44'>
-        <div className='w-full flex flex-col gap-10 lg:flex-row items-center h-full lg:justify-between lg:px-5 xl:px-10 lg:border-x lg:border-slate-800'>
+      <div className='flex items-center h-screen w-screen bg-[url(/auth.webp)] bg-no-repeat bg-cover bg-center justify-between pt-24 px-5 sm:px-10 md:px-16 lg:px-24 xl:px-36 2xl:px-44'>
+        <div className='w-full flex flex-col items-center lg:flex-row h-full gap-20 lg:px-5 xl:px-10 lg:border-x lg:border-slate-800'>
 
-          <div className='w-1/2 flex flex-col gap-5'>
+          <div className='w-full flex flex-col gap-5 items-center lg:items-start lg:w-1/2'>
             <h1 className='text-3xl sm:text-4xl lg:text-5xl text-white'>Sign Up for CoinTrade</h1>
             <h2 className='text-slate-200 leading-7'>Join Us and Start Trading Crypto Today</h2>
           </div>
 
-          <form onSubmit={registerUser} className='bg-slate-900 w-[29rem] p-7 py-10 rounded-md border border-slate-500 flex flex-col items-center gap-4'>
+          <form onSubmit={registerUser} className='bg-slate-900 w-full sm:w-96 lg:w-[29rem] p-7 py-10 rounded-md border border-slate-500 flex flex-col items-center gap-4'>
             <input onChange={handleChange} name='name' className='w-full bg-slate-800 border-b text-sm md:text-base px-3 text-slate-200 outline-none py-1.5' type="text" placeholder='Name' />
             <input onChange={handleChange} name='email' className='w-full bg-slate-800 border-b text-sm md:text-base px-3 text-slate-200 outline-none py-1.5' type="email" placeholder='Email' />
             <div className='flex items-center gap-4 relative w-full'>

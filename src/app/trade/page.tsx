@@ -9,7 +9,7 @@ const Page = () => {
 
     const router = useRouter()
 
-    const [user, setUser] = useState({ name: 'Arnold Nillas', token: '', is_admin: false })
+    const [user, setUser] = useState({ name: '', token: '', is_admin: false })
 
     useEffect(() => {
 

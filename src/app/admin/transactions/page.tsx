@@ -7,13 +7,12 @@ import UserTable from '@/components/admin/UserTable'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
 
 const Page = () => {
 
   const router = useRouter()
 
-  const [user, setUser] = useState({ name: 'Arnold Nillas', token: '', isAdmin: false })
+  const [user, setUser] = useState({ name: '', token: '', isAdmin: false })
 
   const [allTrades, setAllTrades] = useState<Trades[]>([])
 
@@ -131,7 +130,7 @@ const Page = () => {
                           <tr className="border-b text-slate-200 bg-gray-800 border-gray-700" key={item.id}>
                             <td className="px-6 py-4">
                               <div className='h-5 w-28'>
-                                <Link href={`/admin/view-trader/${item.user_id}`}>{item.user_id}</Link>
+                                <span>{item.user_id}</span>
                               </div>
                             </td>
 

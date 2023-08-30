@@ -15,7 +15,7 @@ const Page = () => {
 
   const router = useRouter()
 
-  const [user, setUser] = useState({ name: 'Arnold Nillas', token: '', isAdmin: false })
+  const [user, setUser] = useState({ name: '', token: '', isAdmin: false })
 
   const [searchQuery, setSearchQuery] = useState('')
 

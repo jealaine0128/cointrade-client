@@ -489,8 +489,6 @@ const Page = ({ params }: Props) => {
 
         } catch (error: any) {
 
-            alert('insufficient funds')
-
             setIsLoading(false)
 
             if (error.request.status === 401) {
@@ -536,8 +534,6 @@ const Page = ({ params }: Props) => {
 
         } catch (error: any) {
 
-            alert('insufficient funds')
-            
             setIsLoading(false)
 
             if (error.request.status === 401) {
